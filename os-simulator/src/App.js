@@ -5,11 +5,6 @@ import './style/pages/home.scss'
 
 const App = (props) => {
 
-	const style = {
-		width: "100vw",
-		height: "100vh"
-	}
-
 	const centeredStyle = {
 		position: "absolute",
 		top: "50%",
@@ -27,7 +22,7 @@ const App = (props) => {
 	}
   
 	return (
-		<div style={style}>
+		<div className="home-container">
 			<WelcomeTitle style={titleStyle}></WelcomeTitle>
 			<div style={centeredStyle}>
 				<PlayButton style={buttonStyle}></PlayButton>

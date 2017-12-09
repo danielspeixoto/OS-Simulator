@@ -1,13 +1,16 @@
 import React from 'react'
+import banner from '../images/banner.png'
 
 const WelcomeTitle = (props) => {
 
 	return (
-		<h1 
+		<img 
 			className="welcome-title"
 			style={props.style}
-			>OS Simulator
-		</h1>
+			src={banner}
+			alt="OS Simulator banner"
+			>
+		</img>
 	)
 }
 
