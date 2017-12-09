@@ -6,10 +6,8 @@ import './style/pages/home.scss'
 const App = (props) => {
 
 	const centeredStyle = {
-		position: "absolute",
-		top: "50%",
-		left: "50%",
-		transform: "translate(-50%, -50%)"
+		position: "relative",
+		transform: "translateY(50%)"
 	}
 
 	const buttonStyle = {
