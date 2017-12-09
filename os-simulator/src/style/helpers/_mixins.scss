@@ -1,0 +1,15 @@
+@mixin rounded($size) {
+	width: $size;
+	height: $size;
+	border-radius: 50%;
+}
+
+@mixin rounded-with-borders($size, 
+		$thickness : 10px,
+		$color : $primary) {
+
+	@include rounded($size);
+	border-style: solid;
+	border-width: $thickness;
+	border-color: $color;
+}

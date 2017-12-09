@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import WelcomeTitle from './components/WelcomeTitle'
 import PlayButton from './components/PlayButton'
-import './stylesheet.css'
+import './style/pages/home.scss'
 
 const App = (props) => {
 
@@ -23,7 +23,7 @@ const App = (props) => {
 	}
 	
 	const titleStyle = {
-		width: "100%"
+	
 	}
   
 	return (

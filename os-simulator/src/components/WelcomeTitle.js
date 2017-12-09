@@ -4,7 +4,7 @@ const WelcomeTitle = (props) => {
 
 	return (
 		<h1 
-			className="welcomeTitle"
+			className="welcome-title"
 			style={props.style}
 			>OS Simulator
 		</h1>
