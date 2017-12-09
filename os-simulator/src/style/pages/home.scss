@@ -1,0 +1,11 @@
+@import '../base/_color';
+@import '../components/_welcome-title';
+@import '../components/_play-button';
+
+.home-container {
+	width: 100vw;
+	height: 100vh;
+	background-image: url('../../images/home-background.png');
+	background-size: contain;
+
+}
