@@ -1,8 +1,19 @@
 @import '../base/_color';
 @import '../components/_control-buttons-group';
+@import '../components/_block-numbered';
+@import '../components/_column-of-numbers';
+@import '../components/_instance-of-time';
+@import '../components/_processes-timeline';
+@import '../components/_running-processes';
+@import '../components/_process';
+@import '../components/_time';
 
 .processes-container {
 	width: 100vw;
 	height: 100vh;
 	background-color: $secondary
+}
+
+ul {
+	list-style:none;
 }

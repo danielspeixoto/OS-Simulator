@@ -4,7 +4,7 @@ import store from "../stores/store";
 import reducers from '../reducers/home'
 import WelcomeTitle from '../components/WelcomeTitle'
 import PlayButton from '../components/PlayButton'
-import '../style/pages/home.scss'
+import './Home.js'
 
 const Home = (props) => {
 
@@ -17,16 +17,12 @@ const Home = (props) => {
 		margin: "auto",
 		display: "block"
 	}
-	
-	const titleStyle = {
-	
-	}
   
 	return (
 		<Provider 
 			store={store(reducers)}>
 			<div className="home-container">
-				<WelcomeTitle style={titleStyle}/>
+				<WelcomeTitle />
 				<div style={centeredStyle}>
 					<PlayButton style={buttonStyle}/>
 				</div>

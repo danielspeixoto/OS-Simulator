@@ -2,10 +2,10 @@ import React from 'react'
 
 const PlayButton = (props) => {
 	return (
-		<button 
+		<li 
 			className="play-button"
 			style={props.style}>
-		</button>
+		</li>
 	)
 }
 

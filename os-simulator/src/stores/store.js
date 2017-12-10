@@ -2,7 +2,7 @@ import { createStore } from "redux";
 import middlewares from './middlewares'
 
 const store = (reducers) => {
-	createStore (
+	return createStore (
 		reducers,
 		undefined,
 		middlewares

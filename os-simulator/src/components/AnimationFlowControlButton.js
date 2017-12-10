@@ -3,13 +3,13 @@ import React from 'react'
 const AnimationFlowControlButton = (props) => {
 
 	return (
-		<div>
+		<li>
 			<button
 				className='animation-flow-control-button'
 				style={props.style}>
 
 			</button>
-		</div>
+		</li>
 	)
 }	
 

@@ -1,0 +1,13 @@
+@mixin instant-on-time {
+	width: 100%;
+}
+
+.process {
+	@include instant-on-time();
+	background-color: $primary;
+}
+
+.override {
+	@include instant-on-time();
+	background-color: red;
+}

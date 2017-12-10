@@ -1,7 +1,7 @@
 import React from 'react'
-import RamButton from './RamButton'
-import ConfigButton from './ConfigButton'
-import AnimationFlowControlButton from './AnimationFlowControlButton'
+import RamButton from '../components/RamButton'
+import ConfigButton from '../components/ConfigButton'
+import AnimationFlowControlButton from '../components/AnimationFlowControlButton'
 
 const NavBar = (props) => {
 	
