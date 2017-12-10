@@ -1,31 +1,20 @@
 import React from 'react'
-import WelcomeTitle from './components/WelcomeTitle'
-import PlayButton from './components/PlayButton'
-import './style/pages/home.scss'
+import {
+	BrowserRouter,
+	Route,
+	Switch
+  } from 'react-router-dom'
+import Home from './pages/home'
+import Processes from './pages/processes'
 
 const App = (props) => {
-
-	const centeredStyle = {
-		position: "relative",
-		transform: "translateY(50%)"
-	}
-
-	const buttonStyle = {
-		margin: "auto",
-		display: "block"
-	}
-	
-	const titleStyle = {
-	
-	}
-  
 	return (
-		<div className="home-container">
-			<WelcomeTitle style={titleStyle}></WelcomeTitle>
-			<div style={centeredStyle}>
-				<PlayButton style={buttonStyle}></PlayButton>
-			</div>
-		</div>
+		<BrowserRouter>
+			<Switch>
+				<Route exact path="/" component={ Home }/>
+				<Route path="/processes" component={ Processes }/>
+			</Switch>
+		</BrowserRouter>
 	);
   
 }
