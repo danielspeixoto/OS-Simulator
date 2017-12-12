@@ -1,5 +1,7 @@
 @mixin instant-on-time {
 	width: 100%;
+	min-width: 100px;
+	width: 25vw;
 }
 
 .process {

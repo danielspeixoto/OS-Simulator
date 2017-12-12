@@ -14,8 +14,10 @@ const ProcessTimeline = (props) => {
 
 	return (
 		<div className='processes-timeline'>
-		<ColumnOfNumbers size={props.processesCount} />
-			{instancesOfTime}
+			<ColumnOfNumbers size={props.processesCount} />
+			<div className='processes-group'>
+				{instancesOfTime}
+			</div>
 		</div>
 	)
 }
