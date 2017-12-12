@@ -1,0 +1,13 @@
+@import '../base/_color';
+
+.setup-container {
+	width: 100vw;
+	height: 100vh;
+	background-color: $secondary;
+	display: flex;
+	flex-flow: column;
+}
+
+ul {
+	list-style:none;
+}
