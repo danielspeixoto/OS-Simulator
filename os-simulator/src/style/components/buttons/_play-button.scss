@@ -3,10 +3,13 @@
     @include rounded-with-borders(30vh);
 	box-shadow: 0px 5px 10px $shadow;
 	background-image: url('../../images/play.png');
-	background-size: 15vh;
+	background-size: 50%;
 	background-repeat: no-repeat; 
 	background-position: center;
-	outline: transparent
+	outline: transparent;
+	background-color: $secondary;
+	max-width: 30vw;
+	max-height: 30vw;
 }
 
 .play-button:hover {

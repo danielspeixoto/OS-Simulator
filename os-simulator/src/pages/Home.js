@@ -1,10 +1,8 @@
 import React from 'react'
-import { Provider } from "react-redux";
-import store from "../stores/store";
-import reducers from '../reducers/home'
+import { connect } from "react-redux";
 import WelcomeTitle from '../components/WelcomeTitle'
 import PlayButton from '../components/PlayButton'
-import './Home.js'
+import '../style/pages/home.scss'
 
 const Home = (props) => {
 
@@ -19,17 +17,22 @@ const Home = (props) => {
 	}
   
 	return (
-		<Provider 
-			store={store(reducers)}>
-			<div className="home-container">
-				<WelcomeTitle />
-				<div style={centeredStyle}>
-					<PlayButton style={buttonStyle}/>
-				</div>
+		<div className="home-container">
+			<WelcomeTitle />
+			<div style={centeredStyle}>
+				<PlayButton style={buttonStyle}/>
 			</div>
-		</Provider>
+		</div>
 	);
   
 }
 
-export default Home;
+export default connect(
+	state => ({
+		processes: state.processes
+	}),
+	{
+
+	}
+) (Home)
+

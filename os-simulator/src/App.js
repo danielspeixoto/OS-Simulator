@@ -8,15 +8,18 @@ import Home from './pages/Home'
 import Processes from './pages/Processes'
 import { Provider } from "react-redux";
 import store from "./stores/store";
-import reducers from './reducers/processes/'
+import processes from './reducers/processes/'
 
 const App = (props) => {
 	return (
 		<BrowserRouter>
 			<Switch>
-				<Route exact path="/" component={ Home }/>
 				<Provider 
-					store={store(reducers)}>
+					store={store(processes)}>
+					<Route exact path="/" component={ Home }/>
+				</Provider>
+				<Provider 
+					store={store(processes)}>
 					<Route path="/processes" component={ Processes }/>
 				</Provider>
 			</Switch>
