@@ -1,11 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const PlayButton = (props) => {
 	return (
-		<div 
+		<Link 
+			to='/processes'
 			className="play-button"
 			style={props.style}>
-		</div>
+		</Link>
 	)
 }
 

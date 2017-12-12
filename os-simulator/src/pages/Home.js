@@ -1,7 +1,6 @@
 import React from 'react'
-import { connect } from "react-redux";
 import WelcomeTitle from '../components/WelcomeTitle'
-import PlayButton from '../components/PlayButton'
+import PlayButton from '../components/buttons/PlayButton'
 import '../style/pages/home.scss'
 
 const Home = (props) => {
@@ -27,12 +26,4 @@ const Home = (props) => {
   
 }
 
-export default connect(
-	state => ({
-		processes: state.processes
-	}),
-	{
-
-	}
-) (Home)
-
+export default Home
