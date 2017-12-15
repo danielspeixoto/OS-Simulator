@@ -3,8 +3,8 @@ import React from 'react'
 const AddButton = ({onClick}) => {
 	return (
 		<button className="add-button"
-			type="submit"
-			onClick={onClick}>
+			onClick={onClick}
+			type="button">
 		</button>
 	)
 }

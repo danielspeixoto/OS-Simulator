@@ -1,4 +1,4 @@
-@import '../base/_color';
+@import '../base/_defaults';
 @import '../components/_control-buttons-group';
 @import '../components/_block-numbered';
 @import '../components/_column-of-numbers';
@@ -9,14 +9,5 @@
 @import '../components/_process';
 @import '../components/_time';
 
-.processes-container {
-	width: 100vw;
-	height: 100vh;
-	background-color: $secondary;
-	display: flex;
-	flex-flow: column;
-}
-
-ul {
-	list-style:none;
+.main-screen {
 }

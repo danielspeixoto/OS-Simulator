@@ -1,7 +1,7 @@
 import React from 'react'
 import WelcomeTitle from '../components/WelcomeTitle'
 import PlayButton from '../components/buttons/PlayButton'
-import '../style/pages/home.scss'
+import '../style/pages/_home.scss'
 
 const Home = (props) => {
 

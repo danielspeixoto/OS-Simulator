@@ -4,6 +4,8 @@ import Setup from '../containers/Setup'
 import Timeline from '../containers/Timeline'
 import setup from '../actions/processes/setup'
 
+import '../style/pages/processes.scss'
+
 const Processes = (props) => {
 
 	if(props.processes.isSet) {

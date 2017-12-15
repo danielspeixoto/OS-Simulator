@@ -1,6 +1,6 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
-import AddButton from './buttons/AddButton'
+import { reduxForm } from 'redux-form'
+import Input from './inputs/Input'
 
 const AddProcessForm = ({ formData, addProcess }) => {
 
@@ -9,29 +9,33 @@ const AddProcessForm = ({ formData, addProcess }) => {
 	}
 
 	return (
-		<div>
-			<label htmlFor="startTime">Start Time</label>
-			<Field className='process-attributes'
-				name="startTime"
-				component="input"
-				type="number"/>
-			<label htmlFor="endTime">End Time</label>
-			<Field className='process-attributes'
-				name="endTime"
-				component="input"
-				type="number"/>
-			<label htmlFor="deadline">Deadline</label>
-			<Field className='process-attributes'
-				name="deadline"
-				component="input"
-				type="number"/>
-			<label htmlFor="priority">Priority</label>
-			<Field className='process-attributes'
-				name="priority"
-				component="input"
-				type="number"/>
-			<AddButton onClick={onSubmit}></AddButton>
-		</div>
+		<form>
+			<Input name="startTime"
+				type="number"
+				className="">
+				Start Time
+				</Input>
+			<Input name="duration"
+				type="number"
+				className="">
+				Duration
+				</Input>
+			<Input name="deadline"
+				type="number"
+				className="">
+				Deadline
+				</Input>
+			<Input name="priority"
+				type="number"
+				className="">
+				Priority
+				</Input>
+			<button className="txt"
+				type="button"
+				onClick={onSubmit}>
+				Add
+			</button>
+		</form>
 	)
 }
  

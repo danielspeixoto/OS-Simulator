@@ -10,10 +10,10 @@ const App = (props) => {
 	return (
 		<Router>
 			<div>
-				<Route exact path="/" component={ Home }/>
 				<Provider store={store(processes)}>
 					<Route path="/processes" component={ Processes }/>
 				</Provider>
+				<Route exact path="/" component={ Home }/>
 			</div>
 		</Router>
 	);

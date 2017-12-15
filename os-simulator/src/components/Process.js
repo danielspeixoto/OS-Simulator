@@ -2,22 +2,22 @@ import React from 'react'
 
 const Process = ({ process, number }) => {
 	return (
-		<div className='process-info'>
-			<span className='process-number'>
+		<div className='card'>
+			<div className='process-number'>
 				{number}
-			</span>
-			<span className='process-props'>
-				{process.startTime}
-			</span>
-			<span className='process-props'>
-				{process.endTime}
-			</span>
-			<span className='process-props'>
-				{process.deadline}
-			</span>
-			<span className='process-props'>
-				{process.priority}
-			</span>
+			</div>
+			<div className='process-props'>
+				<label>Start Time</label>{process.startTime}
+			</div>
+			<div className='process-props'>
+				<label>Duration</label>{process.duration}
+			</div>
+			<div className='process-props'>
+				<label>Deadline</label>{process.deadline}
+			</div>
+			<div className='process-props'>
+				<label>Priority</label>{process.priority}
+			</div>
 		</div>
 	)
 }

@@ -13,7 +13,7 @@ const ProcessList = (props) => {
 	})
 
 	return (
-		<ul className='process-list'>
+		<ul className='non-empty'>
 			{list}
 		</ul>
 	)

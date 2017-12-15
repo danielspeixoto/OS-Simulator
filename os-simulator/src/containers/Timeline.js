@@ -1,7 +1,6 @@
 import React from 'react'
 import NavBar from './NavBar'
 import ProcessTimeline from './RunningProcesses'
-import '../style/pages/processes.scss'
 
 const Timeline = (props) => {
   
