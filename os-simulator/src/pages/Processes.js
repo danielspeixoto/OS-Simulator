@@ -10,12 +10,15 @@ const Processes = (props) => {
 
 	if(props.processes.isSet) {
 		return (
-			<Timeline processes={props.processes}></Timeline>
+			<Timeline
+				processes={props.processes}></Timeline>
 		)
 	}
 
 	return (
-			<Setup processes={props.processes}
+			<Setup
+				className='distance' 
+				processes={props.processes}
 				form={props.form}
 				addProcess={props.addProcess}
 				onSetupDone={props.endSetup}

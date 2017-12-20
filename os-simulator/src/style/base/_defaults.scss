@@ -22,7 +22,6 @@ li {
 body {
 	width: 100vw;
 	height: 100vh;
-	padding: $proportion * 2;
 	display: flex;
 	& > div {
 		flex-grow: 1;
@@ -97,4 +96,8 @@ div.card {
 		margin: 0 auto;
 	}
 	margin-bottom: $proportion * 2;
+}
+
+.distance {
+	margin: $proportion
 }

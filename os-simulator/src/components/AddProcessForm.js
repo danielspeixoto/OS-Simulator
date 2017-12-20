@@ -2,10 +2,13 @@ import React from 'react'
 import { reduxForm } from 'redux-form'
 import Input from './inputs/Input'
 
-const AddProcessForm = ({ formData, addProcess }) => {
+const AddProcessForm = ({ formData, addProcess, processNumber }) => {
 
 	const onSubmit = () => {
-		addProcess(formData.values)
+		addProcess({
+			...formData.values,
+			number: processNumber
+		})
 	}
 
 	return (

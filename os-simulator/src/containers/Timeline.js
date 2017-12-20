@@ -3,13 +3,15 @@ import NavBar from './NavBar'
 import ProcessTimeline from './RunningProcesses'
 
 const Timeline = (props) => {
-  
+
+	console.log(props.processes)
+
 	return (
-			<div className="processes-container">
+			<div className={`processes-container ${props.className}`}>
 				<NavBar></NavBar>
 				<ProcessTimeline
 					timeline={props.processes.timeline}
-					processesCount={props.processes.processesCount}
+					processesCount={props.processes.list.length}
 					/>
 			</div>
 	);

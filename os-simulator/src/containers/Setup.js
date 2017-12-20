@@ -7,12 +7,19 @@ const Setup = ({
 	addProcess,
 	form,
 	processes,
-	onSetupDone
+	onSetupDone,
+	className,
+	method
 }) => {
 
+	const onDone = () => {
+		onSetupDone(processes.list, method)
+	}
+
 	return (
-			<div>
+			<div className={className}>
 				<AddProcessForm addProcess={addProcess}
+					processNumber={processes.list.length}
 					formData={form.addProcess}
 				></AddProcessForm>
 				<EmptyList display={!processes.list.length > 0}>
@@ -20,7 +27,8 @@ const Setup = ({
 				</EmptyList>
 				<ProcessList processes={processes.list}></ProcessList>
 				<button className='txt end-operation'
-					onClick={onSetupDone}>Done</button>
+					onClick={onDone}>Done</button>
+				{/* Methods list  */}
 			</div>
 	);
   
