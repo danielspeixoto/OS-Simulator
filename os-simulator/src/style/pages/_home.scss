@@ -1,6 +1,6 @@
 @import '../base/_color';
 @import '../components/_welcome-title';
-@import '../components/_play-button';
+@import '../components/buttons/_play-button';
 
 .home-container {
 	width: 100vw;
@@ -9,3 +9,4 @@
 	background-size: contain;
 
 }
+

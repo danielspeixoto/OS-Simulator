@@ -1,0 +1,8 @@
+.control-buttons-group {
+	margin-top: 0;
+	display: flex;
+	flex-flow: row-reverse;
+	* {
+		margin-right: 1vw;
+	}
+}

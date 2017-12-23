@@ -1,0 +1,9 @@
+.column-of-numbers {
+	border-style: solid;
+	border-width: 1px;
+	border-color: $tertiary;
+	display: flex;
+	flex-flow: column;
+	height: max-content;
+	color: $tertiary;
+}

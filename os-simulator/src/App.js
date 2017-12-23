@@ -1,33 +1,22 @@
 import React from 'react'
-import WelcomeTitle from './components/WelcomeTitle'
-import PlayButton from './components/PlayButton'
-import './style/pages/home.scss'
+import Home from './pages/Home'
+import Processes from './pages/Processes'
+import { Provider } from "react-redux";
+import store from "./stores/index";
+import processes from './reducers/processes/'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 const App = (props) => {
-
-	const centeredStyle = {
-		position: "relative",
-		transform: "translateY(50%)"
-	}
-
-	const buttonStyle = {
-		margin: "auto",
-		display: "block"
-	}
-	
-	const titleStyle = {
-	
-	}
-  
 	return (
-		<div className="home-container">
-			<WelcomeTitle style={titleStyle}></WelcomeTitle>
-			<div style={centeredStyle}>
-				<PlayButton style={buttonStyle}></PlayButton>
+		<Router>
+			<div>
+				<Provider store={store(processes)}>
+					<Route path="/processes" component={ Processes }/>
+				</Provider>
+				<Route exact path="/" component={ Home }/>
 			</div>
-		</div>
+		</Router>
 	);
-  
 }
 
 export default App;
