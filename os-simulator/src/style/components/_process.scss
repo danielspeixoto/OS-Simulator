@@ -13,3 +13,8 @@
 	@include instant-on-time();
 	background-color: red;
 }
+
+.empty-process {
+	@include instant-on-time();
+	background-color: transparent
+}

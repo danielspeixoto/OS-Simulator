@@ -4,12 +4,18 @@ import { PROCESS_HEIGHT } from '../config/constants'
 const InstanceOfTime = (props) => {
 
 	const processStyle = {
-		marginTop: PROCESS_HEIGHT * props.action.number + "vh",
-		height: PROCESS_HEIGHT + "vh"
+		height: PROCESS_HEIGHT + "vh",
+		marginTop: 0
 	}
+	if(props.action) {
+		processStyle['marginTop'] =
+			PROCESS_HEIGHT * props.action.number + "vh"
+	}
+	const type = props.action? 
+		props.action.isOverride ? 
+			'override' : 'process'
+		: 'empty-process'
 	
-	const type = props.action.isOverride ? 'override' : 'process'
-
 	return (
 		<div className="instance-of-time">
 			<div className={type}

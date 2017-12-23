@@ -1,12 +1,15 @@
 import React from 'react'
 import { reduxForm } from 'redux-form'
 import Input from './inputs/Input'
+import {
+	stringObjToIntObj
+} from '../helpers/convert'
 
 const AddProcessForm = ({ formData, addProcess, processNumber }) => {
 
 	const onSubmit = () => {
 		addProcess({
-			...formData.values,
+			...stringObjToIntObj(formData.values),
 			number: processNumber
 		})
 	}
