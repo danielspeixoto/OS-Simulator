@@ -23,6 +23,7 @@ body {
 	width: 100vw;
 	height: 100vh;
 	display: flex;
+	flex-flow: column;
 	& > div {
 		flex-grow: 1;
 	}
@@ -100,4 +101,49 @@ div.card {
 
 .distance {
 	margin: $proportion
+}
+
+.wrap-contents {
+	flex-flow: wrap;
+	height: 0;
+}
+
+.memory-block {
+	flex-grow: 1;
+	border-style: groove;	
+	min-width: 150px;
+	min-height: 150px;
+	& > span {
+		font-size: 1em;
+	}
+
+	& > div {
+		margin: 0 auto;
+		font-size: xx-large;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+}
+
+.fill-available {
+	flex-grow: 1
+}
+
+.navbar {
+	height: 50px;
+	max-height: 6.5vh;
+}
+
+.change-view {
+	background-image: url('../../images/changeview.png');
+	background-size: 50%;
+	background-repeat: no-repeat; 
+	background-position: center;
+	outline: transparent;
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+	max-width: 5vh;
+	border: 0;
+	max-height: 5vh;
 }

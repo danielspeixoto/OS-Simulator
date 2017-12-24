@@ -1,30 +1,64 @@
-const fifo = (processes) => {
+import memoryDefault from '../../reducers/processes/memoryDefault'
+
+const fifo = (processes, memoryMethod, quantum) => {
 	var timeline = []
+	var memoryTimeline = []
+	var memory = memoryDefault
+	var pointerToPage = 0;
 	// Order based on smaller start time
 	processes.sort(compare)
 	// Create a instance of time for each duration
 	var duration = 0
 	var i = 0
-
 	var time = 0
-	processes.forEach(process => {
-		if(time < process.startTime) {
-			for(; time < process.startTime; time++) {
-				// Null means that there are no processes runnning
-				timeline.push(null)
-			}
-		}
-		duration = process.duration;
-		for(i = 0; i < duration; i++) {
-			timeline.push({
-				number: process.number,
-				isOverride: false
-			})
-			time++
-		}
-	})
 
-	return timeline
+	if(memoryMethod === 'fifo') {
+		processes.forEach(process => {
+			// If there is no processes starting at current time, wait
+			if(time < process.startTime) {
+				for(; time < process.startTime; time++) {
+					// Null means that there are no processes runnning
+					timeline.push(null)
+					memoryTimeline.push(
+						memory.slice()
+					)
+				}
+			}
+			
+			// Loading pages lasts a quantum for each page
+			for(i = 0; i < quantum * process.numOfPages; i++) {
+				timeline.push(null)
+				memoryTimeline.push(
+					memory.slice()
+				)
+				time++
+			}
+
+			// Loads page
+			for(i = 0; i < process.numOfPages; i++) {
+				memory[pointerToPage] = process.number
+				pointerToPage = (pointerToPage + 1) % 100
+			}
+
+			// Execute process
+			duration = process.duration;
+			for(i = 0; i < duration; i++) {
+				timeline.push({
+					number: process.number,
+					isOverride: false
+				})
+				memoryTimeline.push(
+					memory.slice()
+				)
+				time++
+			}
+		})
+	}
+
+	return {
+		timeline,
+		memoryTimeline
+	}
 }
 
 //TODO Return ints instead of strings

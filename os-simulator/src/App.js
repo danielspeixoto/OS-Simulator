@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 const App = (props) => {
 	return (
 		<Router>
-			<div>
+			<div className='fill-available'>
 				<Provider store={store(processes)}>
 					<Route path="/processes" component={ Processes }/>
 				</Provider>

@@ -1,6 +1,7 @@
 import {
 	ADD,
-	SETUP
+	SETUP,
+	MEMORY_VIEW
 } from '../../reducers/processes/setup'
 import {
 	EDF,
@@ -21,16 +22,22 @@ export default {
 			}
 		}
 	},
-	endSetup: (processes, method) => {
+	endSetup: (processes, cpu, memory, quantum) => {
 
-		const timeline = getMethod(method)(processes)
+		const config = getMethod(cpu)(processes, memory, quantum)
 
 		return {
 			type: SETUP,
 			payload: {
 				isSet: true,
-				timeline
+				...config
 			},
+		}
+	},
+
+	timelineViewChanged: () => {
+		return {
+			type: MEMORY_VIEW,
 		}
 	}
 }
