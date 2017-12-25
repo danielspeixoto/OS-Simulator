@@ -11,13 +11,16 @@ const Processes = (props) => {
 	if(props.processes.isSet) {
 		return (
 			<Timeline
-				processes={props.processes}></Timeline>
+				processes={props.processes}
+				isMemoryView={props.isMemoryView}
+				memory={props.memory}
+				timelineViewChanged={props.timelineViewChanged}></Timeline>
 		)
 	}
 
 	return (
 			<Setup
-				className='distance' 
+				className='distance'
 				processes={props.processes}
 				form={props.form}
 				addProcess={props.addProcess}

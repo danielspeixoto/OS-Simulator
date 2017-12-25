@@ -2,7 +2,7 @@ import React from 'react'
 import ColumnOfNumbers from '../components/ColumnOfNumbers'
 import InstanceOfTime from '../components/InstanceOfTime'
 
-const ProcessTimeline = (props) => {
+const RunninngProcesses = (props) => {
 
 	let id = 0
 
@@ -22,4 +22,4 @@ const ProcessTimeline = (props) => {
 	)
 }
 
-export default ProcessTimeline
+export default RunninngProcesses

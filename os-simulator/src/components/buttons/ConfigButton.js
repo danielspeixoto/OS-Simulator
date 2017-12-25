@@ -6,8 +6,8 @@ const ConfigButton = (props) => {
 		<li>
 			<button
 				className='config-button'
-				style={props.style}>
-
+				style={props.style}
+				onClick={props.onClick}>
 			</button>
 		</li>
 	)

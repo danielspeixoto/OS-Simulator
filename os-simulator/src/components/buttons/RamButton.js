@@ -6,8 +6,8 @@ const RamButton = (props) => {
 		<li>
 			<button
 				className='ram-button'
-				style={props.style}>
-
+				style={props.style}
+				onClick={props.onClick}>
 			</button>
 		</li>
 	)

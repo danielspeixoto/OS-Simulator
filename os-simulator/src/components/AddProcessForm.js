@@ -10,6 +10,7 @@ const AddProcessForm = ({ formData, addProcess, processNumber }) => {
 	const onSubmit = () => {
 		addProcess({
 			...stringObjToIntObj(formData.values),
+			numOfPages: Math.floor((Math.random() * 10) + 10),
 			number: processNumber
 		})
 	}
