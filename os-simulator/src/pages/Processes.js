@@ -11,6 +11,7 @@ const Processes = (props) => {
 	if(props.processes.isSet) {
 		return (
 			<Timeline
+				turnaround={props.turnaround}
 				processes={props.processes}
 				isMemoryView={props.isMemoryView}
 				memory={props.memory}

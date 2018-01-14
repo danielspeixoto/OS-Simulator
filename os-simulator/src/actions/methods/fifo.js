@@ -11,7 +11,7 @@ const fifo = (processes, memoryMethod, quantum) => {
 	var duration = 0
 	var i = 0
 	var time = 0
-
+	var turnaround = 0
 	if(memoryMethod === 'fifo') {
 		processes.forEach(process => {
 			// If there is no processes starting at current time, wait
@@ -52,16 +52,18 @@ const fifo = (processes, memoryMethod, quantum) => {
 				)
 				time++
 			}
+			turnaround += time - process.startTime
 		})
 	}
 
+	// TODO Assure floating number
 	return {
 		timeline,
-		memoryTimeline
+		memoryTimeline,
+		turnaround: turnaround / processes.length
 	}
 }
 
-//TODO Return ints instead of strings
 function compare(a, b) {
 	if(a.startTime < b.startTime) {
 		return -1

@@ -17,15 +17,14 @@ const SimulatorConfig = ({
 	}
 
 	return (
-		<form>
+		<form class="distance">
 			<ProcessList processes={list}></ProcessList>
 			<Input
 				name="quantum"
 				type="number"
 			>Quantum</Input>
 			<fieldset id='cpu'>
-				<label>CPU Method</label>
-				<div>
+				<label><b>CPU Method:</b></label>
 					<label>
 						<Field
 						name="cpu"
@@ -62,11 +61,9 @@ const SimulatorConfig = ({
 						/>
 						EDF
 					</label>
-				</div>
 			</fieldset>
 			<fieldset id='memory'>
-				<label>Memory Method</label>
-				<div>
+				<label><b>Memory Method</b></label>
 				<label>
 					<Field
 					name="memory"
@@ -85,7 +82,6 @@ const SimulatorConfig = ({
 					/>
 					Menos Recentemente Utilizada
 				</label>
-				</div>
 			</fieldset>
 			<button className='txt end-operation'
 				onClick={onDone}>Done</button>

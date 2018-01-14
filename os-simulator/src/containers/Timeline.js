@@ -17,7 +17,9 @@ const Timeline = (props) => {
 	return (
 			<div className={`fill-available ${
 				props.className}`}>
-				<NavBar timelineViewChanged={props.timelineViewChanged}></NavBar>
+				<NavBar timelineViewChanged={props.timelineViewChanged}
+					turnaround={props.processes.turnaround}>
+				</NavBar>
 				{view}
 			</div>
 	);

@@ -7,7 +7,8 @@ const setupReducer = (state = {
 	list: [],
 	timeline: [],
 	memoryTimeline: [],
-	isMemoryView: false
+	isMemoryView: false,
+	turnaround: 0
 
 }, { payload, type}) => {
 	switch(type) {
@@ -24,7 +25,8 @@ const setupReducer = (state = {
 				memoryTimeline: payload.memoryTimeline,
 				timeline: payload.timeline,
 				list: [...state.list],
-				isSet: payload.isSet
+				isSet: payload.isSet,
+				turnaround: payload.turnaround
 			}
 		case MEMORY_VIEW: 
 			return {

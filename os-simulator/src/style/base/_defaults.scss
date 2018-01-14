@@ -13,7 +13,7 @@ li {
 
 * {
 	width: fit-content;
-	height: fit-content;
+	// height: fit-content;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -21,7 +21,7 @@ li {
 
 body {
 	width: 100vw;
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	flex-flow: column;
 	& > div {
@@ -44,6 +44,16 @@ form {
 		background: {
 			color: green;
 		}
+	}
+}
+
+fieldset {
+	margin: 0 auto;
+	padding: $proportion * 2;
+	& > * {
+		margin-bottom: $proportion * 2;
+		margin-left: $proportion * 2;
+		display: block;
 	}
 }
 
@@ -93,14 +103,15 @@ div.card {
 	padding: $proportion $proportion * 4;
 	flex-flow: row;
 	border-radius: 5px;
-	& > div {
-		margin: 0 auto;
-	}
 	margin-bottom: $proportion * 2;
 }
 
 .distance {
-	margin: $proportion
+	margin: $proportion;
+	& > * {
+		margin: 0 auto;
+		margin-bottom: $proportion * 4
+	}
 }
 
 .wrap-contents {
@@ -146,4 +157,22 @@ div.card {
 	max-width: 5vh;
 	border: 0;
 	max-height: 5vh;
+}
+
+.turnaround {
+	flex-grow: 1;
+	text-align: right;
+	line-height: 35px;
+}
+
+.process-card {
+	 & > div {
+		margin-right: 50px	
+	}
+}
+
+.process-props {
+	& > * {
+		margin: 0 auto
+	}
 }
