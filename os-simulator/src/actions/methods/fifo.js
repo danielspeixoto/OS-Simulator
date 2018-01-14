@@ -26,16 +26,14 @@ const fifo = (processes, memoryMethod, quantum) => {
 			}
 			
 			// Loading pages lasts a quantum for each page
-			for(i = 0; i < quantum * process.numOfPages; i++) {
-				timeline.push(null)
-				memoryTimeline.push(
-					memory.slice()
-				)
-				time++
-			}
-
-			// Loads page
 			for(i = 0; i < process.numOfPages; i++) {
+				for(let j = 0; j < quantum; j++) {
+					timeline.push(null)
+					memoryTimeline.push(
+						memory.slice()
+					)
+					time++
+				}
 				memory[pointerToPage] = process.number
 				pointerToPage = (pointerToPage + 1) % 100
 			}

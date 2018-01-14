@@ -38,17 +38,17 @@ const sjf = (processes, memoryMethod, quantum) => {
 					)
 				}
 			}
-			// Loading pages lasts a quantum for each page
-			for(i = 0; i < quantum * aux.numOfPages; i++) {
-				timeline.push(null)
-				memoryTimeline.push(
-					memory.slice()
-				)
-				time++
-			}
 
-			// Loads page
+
+			// Loading pages lasts a quantum for each page
 			for(i = 0; i < aux.numOfPages; i++) {
+				for(let j = 0; j < quantum; j++) {
+					timeline.push(null)
+					memoryTimeline.push(
+						memory.slice()
+					)
+					time++
+				}
 				memory[pointerToPage] = aux.number
 				pointerToPage = (pointerToPage + 1) % 100
 			}
