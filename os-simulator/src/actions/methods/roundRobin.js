@@ -14,6 +14,7 @@ const roundRobin = (processes, memoryMethod, quantum) => {
 	var time = 0
 	var j = 0
 	var turnaround = 0
+	var k = 0
 	if(memoryMethod === 'fifo') {
 		for(j = 0; j < processesClone.length;){
 			// If there is no processes starting at current time, wait
@@ -26,8 +27,9 @@ const roundRobin = (processes, memoryMethod, quantum) => {
 					)
 				}
 			}
-			// Loading pages lasts a quantum for each page
-			for(i = 0; i < quantum * processesClone[j].numOfPages; i++) {
+			
+			// Loading pages lasts a quantum for each page, only load the pages that are not in the memory
+			for(i = 0; i < quantum * (processesClone[j].numOfPages - processesClone[j].loadedPages); i++) {
 				timeline.push(null)
 				memoryTimeline.push(
 					memory.slice()
@@ -35,11 +37,20 @@ const roundRobin = (processes, memoryMethod, quantum) => {
 				time++
 			}
 
-			// Loads page
-			for(i = 0; i < processesClone[j].numOfPages; i++) {
+			//Make the proper update to the values on the process that had its pages loaded and the process that had its pages removed
+			for(i = 0; i < processesClone[j].numOfPages - processesClone[j].loadedPages;) {
+				//Check the list of process to find the owner of the page that's being removed and the decresead the number of its loadedPages
+				for(k = 0; k < processesClone.length; k++){
+					if(processesClone[k].number == memory[pointerToPage]){
+						processesClone[k].loadedPages--
+					}
+				}
+				//Increase the number of the loaded pages of the process that's being loaded
 				memory[pointerToPage] = processesClone[j].number
+				processesClone[j].loadedPages++
 				pointerToPage = (pointerToPage + 1) % 100
 			}
+
 			// Execute process
 			duration = quantum;
 			for(i = 0; i < duration; i++) {
@@ -88,7 +99,7 @@ const roundRobin = (processes, memoryMethod, quantum) => {
 					memoryTimeline.push(
 						memory.slice()
 					)
-					time++
+					time++;
 				}
 			}
 		}
