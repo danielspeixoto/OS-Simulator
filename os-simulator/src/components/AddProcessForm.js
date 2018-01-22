@@ -11,7 +11,8 @@ const AddProcessForm = ({ formData, addProcess, processNumber }) => {
 		addProcess({
 			...stringObjToIntObj(formData.values),
 			numOfPages: Math.floor((Math.random() * 10) + 10),
-			number: processNumber
+			number: processNumber,
+			loadedPages: 0
 		})
 	}
 
