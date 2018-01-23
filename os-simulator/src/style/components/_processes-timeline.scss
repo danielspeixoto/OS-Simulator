@@ -1,7 +1,7 @@
 .processes-timeline {
-	display: flex;
 	overflow: auto;
 	padding-left: 0;
 	margin-top: 0;
 	flex-grow: 1;
+	flex-flow: row;
 }

@@ -3,13 +3,13 @@ import React from 'react'
 const ConfigButton = (props) => {
 
 	return (
-		<div>
+		<li>
 			<button
 				className='config-button'
-				style={props.style}>
-
+				style={props.style}
+				onClick={props.onClick}>
 			</button>
-		</div>
+		</li>
 	)
 }
 

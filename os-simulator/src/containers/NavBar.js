@@ -1,17 +1,19 @@
 import React from 'react'
-import RamButton from '../components/RamButton'
-import ConfigButton from '../components/ConfigButton'
-import AnimationFlowControlButton from '../components/AnimationFlowControlButton'
 
 const NavBar = (props) => {
 	
 	return (
-		<div className='navbar'>
-			<ul className='control-buttons-group'>
-				<RamButton/>
-				<ConfigButton/>
-				<AnimationFlowControlButton/>
-			</ul>
+		<div className='navbar card'>
+			<div className='control-buttons-group'>
+				<button
+					className='change-view'
+					onClick={props.timelineViewChanged}>
+				</button>
+				<span
+					className='turnaround'>
+					<b>Turnaround:</b> {props.turnaround}
+				</span>				
+			</div>
 		</div>
 	)
 }
